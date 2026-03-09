@@ -31,10 +31,18 @@ Repositório da disciplina **Desenvolvimento Web II** — 2026
 
 ## 🔗 Como visualizar
 
+<<<<<<< HEAD
 1. Clone o repositório: `git clone https://github.com/Henriquegnatta/2026-DWII
+=======
+1. Clone o repositório: `git clone https://github.com/Henriquegnatta/2026-DWII`
+>>>>>>> eb8e18028560ae61fb3d5132059d685193041480
 2. Acesse a pasta `00_apresentacao/`
 3. Abra o arquivo `index.html` no navegador
 
 ---
 
+<<<<<<< HEAD
 *Disciplina ministrada pelo Prof. Dr. João Henrique Berssanette — joao.berssanette@ifpr.edu.br*
+=======
+*Disciplina ministrada pelo Prof. Dr. João Henrique Berssanette — joao.berssanette@ifpr.edu.br*
+>>>>>>> eb8e18028560ae61fb3d5132059d685193041480
