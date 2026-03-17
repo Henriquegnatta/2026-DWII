@@ -1,69 +1,32 @@
 <?php 
+/**
+ * Arquivo: 01_php-intro/index.php (exemplo - aplique o padrão)
+ * Diciplinas: Desenvolvimento Web e introdução ap PHP
+ * Aula  : 03 - Arquitetura Web e introdução ao PHP
+ * Autor:  Henrique Gnatta
+ * 
+ * 
+ * 
+ * 
+*/
 $nome="Henrique Gnatta";
+$pagina_atual = "Projetos";
+$caminho_raiz = "../";
 ?>
 
-<?php include 'includes/cabecalho.php';?>
-<style>
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    background: #f3f4f6
-}
+<?php include '../includes/cabecalho.php';?>
 
-
-nav a{
-    color:white; 
-    text-decoration: none;
-    margin-right:20px; 
-    font-weight:bold;
-}
-nav a:hover {
-    text-decoration: underline;
-}
-.hero{
-    background:linear-gradient(135deg, #3b579d, #2a4080);
-    color:white; 
-    text-align: center; 
-    padding: 60px 20px;
-}
-.hero h3{
-    font-size:2.5em;
-    margin-bottom:10px;
-  
-}
-
-.hero p{
-    font-size: 1.2em;
-    opacity:0.9;
-}
-.conteiner{
-    max-width: 800px;
-    margin:40px auto;
-    padding: 0 20px;
-}
-footer{
-    background:#010000;
-    color: #6b7280;
-    text-align:center;
-    padding:20px;
-    margin-top: 60px;
-    font-size:14px
-
-}
-h4{
-    margin-left:10px;
-}
-</style>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos -<?php echo $nome?></title>
+    <title>Projetos -<?php echo $pagina_atual?></title>
 </head>
 <body>
     <div class="hero">
-        <h3>Meus projetos </h3>
+        <h2>Meus projetos </h2>
 </div>
 <div class="pop">
 <h4>1-Projeto:Sistema de cardapio online
@@ -78,6 +41,6 @@ h4{
 
 </h4>
 </div>
-<?php include 'includes/rodape.php';?>
+<?php include '../includes/rodape.php';?>
 </body>
 </html>

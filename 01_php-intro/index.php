@@ -1,8 +1,19 @@
 <?php 
+/**
+ * Arquivo: 01_php-intro/index.php (exemplo - aplique o padrão)
+ * Diciplinas: Desenvolvimento Web e introdução ap PHP
+ * Aula  : 03 - Arquitetura Web e introdução ao PHP
+ * Autor:  Henrique Gnatta
+ * 
+ * 
+ * 
+ * 
+*/
 $nome ="Henrique Gnatta";
 $Profissao ="Estudante de Tecnologia";
 $curso ="Tecnico em Informartica";
 $pagina_atual = "inicio";
+$caminho_raiz = "../";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,53 +24,10 @@ $pagina_atual = "inicio";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifolio -<?php echo $nome; ?></title>
 </head>
-<?php include 'includes/cabecalho.php'; ?>
-<style>
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    background: #f3f4f6
-}
+
+<?php include '../includes/cabecalho.php'; ?>
 
 
-nav a{
-    color:white; 
-    text-decoration: none;
-    margin-right:20px; 
-    font-weight:bold;
-}
-nav a:hover {
-    text-decoration: underline;
-}
-.hero{
-    background:linear-gradient(135deg, #3b579d, #2a4080);
-    color:white; 
-    text-align: center; 
-    padding: 60px 20px;
-}
-.hero h1{
-    font-size:2.5em;
-    margin-bottom:10px;
-}
-.hero p{
-    font-size: 1.2em;
-    opacity:0.9;
-}
-.conteiner{
-    max-width: 800px;
-    margin:40px auto;
-    padding: 0 20px;
-}
-footer{
-    background:#010000;
-    color: #6b7280;
-    text-align:center;
-    padding:20px;
-    margin-top: 60px;
-    font-size:14px
-
-}
-</style>
 <body>
   
 
@@ -72,6 +40,6 @@ footer{
     <h2>Bem-vindo ao meu portfolio</h2>
     <p>Este pagina foi gerada pelo PHP em:<strong><?php echo date("d/m/Y \à\s H:i:s"); ?></strong></p>
 </div>
-<?php include 'includes/rodape.php';?>
+<?php include '../includes/rodape.php';?>
 </body>
 </html>

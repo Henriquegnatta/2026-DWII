@@ -31,7 +31,7 @@ footer{
 }
 box{
     text-align:left;
-   
+   font-size:15px;
     display:inline-block;
     vertical-align:top;
 }
@@ -55,4 +55,7 @@ h5{
 }
 body{
     background-color: rgb(250, 249, 239);
+}
+div{
+    text-align: center;
 }
