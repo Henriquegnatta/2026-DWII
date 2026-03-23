@@ -45,7 +45,7 @@ $aula = [
             "link"=>"02_formularios/contato.php",
             "icone"=>"📫",
             "cor"=> "#3ba34a",
-            "conceitos" => "$_POST, validação, htmlspecialchhars(),header() +exit", ],];
+            "conceitos" => '$_POST, validação, htmlspecialchhars(),header() +exit', ],];
             ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -82,7 +82,7 @@ $aula = [
             padding:10px 16px;
             border-radius:6 px;
             margin-top:10px;
-            margin-left:100px
+            margin-left:100px;
             font-family:'Courier New',monospace;
             font-size:13px;
             line-height:1.8;">
@@ -121,7 +121,7 @@ $aula = [
      <?php endforeach; ?>
 
      <!-- TIMESTAMP -- demonstra date() - igual ao index.php do portifolio -->
-    <p style="text-aling: right;
+    <p style="text-align: right;
     font-size:13px;
     color:#9ca3af;
     margin-top:8px;">

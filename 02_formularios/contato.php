@@ -37,7 +37,23 @@ $erros = [];
 -->
 
 <?php include '../includes/cabecalho.php'; ?>
+<?php
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $nome_visitante = trim($_POST['nome_visitante'] ?? '');
+    $mensagem = trim($_POST['mensagem'] ?? '');
 
+    //Validação
+
+    if(empty ($nome_visitante)){
+        $erros[] = 'O campo Nome é obrigatorio.';
+    }
+    if(empty($mensagem)){
+        $erros[] = 'O campo Mensagem é obrigatorio.';
+    }elseif (strlen($mensagem) < 10){
+        $erros[] = 'A mensagem deve ter pelo menos 10 caracteres.';
+    }
+}
+?>
 <div class="container">
 
     <h1 class="titulo-secao">📬 Formulário de Contato</h1>
@@ -60,23 +76,8 @@ $erros = [];
 
     </form>
 </div>
-<?php
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $nome_visitante = trim($_POST['nome_visitante'] ?? '');
-    $mensagem = trim($_POST['mensagem'] ?? '');
 
-    //Validação
 
-    if(empty ($nome_visitante)){
-        $erros[] = 'O capo Nome é obrigado.';
-    }
-    if(empty($mensagem)){
-        $erros[] = 'O campo Mensagem é obrigatorio.';
-    }elseif (strlen($mensagem) < 10){
-        $erros[] = 'A mensagem deve ter pelo menos 10 caracteres.';
-    }
-}
-?>
 <?php if (!empty($erros)): ?>
     <div class="alerta-erro">
         <h3>❌Corrija os erros:</h3>
