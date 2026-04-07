@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS portifolio
+CREATE DATABASE IF NOT EXISTS portifolio 
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE portifolio;
 

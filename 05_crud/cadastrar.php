@@ -1,5 +1,6 @@
 <?php
 /**
+ * mariadb -u root -p -h 127.0.0.1 --skip-ssl
  * Diciplina Desenvolvimento Web II (DWII)
  * Aula 07 -> CRUD: Create e Read
  * Arquivo 05_crud/cadastrar.php
@@ -25,15 +26,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $form['nome'] = trim($_POST['nome'] ?? '');
 
-    $form['descricao'] = trim ($_POST['descricao'] ?? '');
+    $form['descricao'] = trim($_POST['descricao'] ?? '');
 
-    $form['tecnologias'] = trim ($_POST['tecnologias'] ?? '');
+    $form['tecnologias'] = trim($_POST['tecnologias'] ?? '');
 
-    $form['link_github'] = trim ($_POST['link_github'] ?? '');
+    $form['link_github'] = trim($_POST['link_github'] ?? '');
 
     $form['ano'] = (int)($_POST['ano'] ?? date('Y'));
 
-    if($form['nome']=== ''){
+    if($form['nome'] === ''){
 
         $erro = 'O nome do projeto é obrigatorio.';
         }elseif($form['descricao'] ===''){
@@ -48,7 +49,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if($erro === ''){
         $pdo = conectar();
 
-        $sql = 'INSERT INTO projetos(nome, descricao,tecnologias,link_github,ano) VALUES (:nome,:decricao,:tecnologias,:lin_github,:ano)';
+        $sql = 'INSERT INTO projetos (nome, descricao,
+        tecnologias,link_github,ano) 
+        VALUES (:nome,:descricao,:tecnologias,:link_github,:ano)';
         $stmt = $pdo -> prepare($sql);
 
         $stmt -> execute([':nome' => $form['nome'],
@@ -56,8 +59,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         ':tecnologias' => $form['tecnologias'],
 
-        ':link_github'=> $form['link_github'] != '' ? $form['link_github'] : null,
-        ':ano' => $form ['ano'],   ]);
+        ':link_github'=> $form['link_github'] !== '' ? $form['link_github'] : null,':ano' => $form ['ano'],   ]);
 
         header('Location: index.php?cadastro=ok');
         exit;
@@ -86,7 +88,7 @@ $pagina_atual = '';
 <div class="form-container">
     <form action="cadastrar.php" method="post">
         <label for="nome">Nome do Projeto: <span style='color:red;'>*</span></label>
-        <input type = "text" id="nome" value="<?php echo htmlspecialchars($form['nome']); ?>"
+        <input type = "text" id="nome" name="nome"value="<?php echo htmlspecialchars($form['nome']); ?>"
         placeholder="Ex.: Sistema de Login com PHP" maxlength="120">
 
         <label for="descricao">Descrição: <span style='color:red;'>*</span></label>

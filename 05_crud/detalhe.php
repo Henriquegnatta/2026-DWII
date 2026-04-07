@@ -1,74 +1,21 @@
-<?php 
-/**
- * Diciplina Desenvolvimento Web II (DWII)
- * Aula 07 CRUD Create e Read
- * Arquivo 05_crud/index.php
- * Autor: Henrique Gnatta
- * Data 04/04/2026
- * Descricao Lista todos os projetos cadastrados no banco (Read)
- */
-
-require_once __DIR__.'/../04_sessoes/includes/auth.php';
-requer_login();
-
-require_once __DIR__.'/includes/conexao.php';
-$pdo = conectar();
-
-
-$buscar = $_POST['buscar'] ?? '';
-
-
-if (!empty($buscar)) {
-    $stmt = $pdo->prepare('SELECT * FROM projetos WHERE nome LIKE :buscar ORDER BY criado_em DESC');
-    $stmt->execute(['buscar' => "%$buscar%"]);
-} else {
-    $stmt = $pdo->query('
-        SELECT * FROM projetos 
-        ORDER BY criado_em DESC
-    ');
-}
-
-
-$projetos = $stmt->fetchAll();
-
-
-$cadastroOk = isset($_GET['cadastro']) && $_GET['cadastro'] === 'ok';
-
-$id = (int) ($_GET['id'] ?? 0);
-$titulo_pagina = 'Meus Projetos -> Portifolio';
-$caminho_raiz = '../';
-$pagina_atual = '';
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-   <?php require_once __DIR__.'/../includes/cabecalho.php'; ?>
+
 </head>
 <body>
 
-   <form class="form-container" action="index.php" method="post" style="margin-bottom:20px;">
-        <input 
-            type="text" 
-            name="buscar" 
-            placeholder="Buscar projetos..." 
-            value="<?php echo htmlspecialchars($buscar); ?>"
-        >
-        <button type="submit">Buscar</button>
-   </form>
     <div class="container">
         <div style="display:flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;margin-bottom:20px;">
-            <h1 class="titulo-secao" style="margin: 0;">Meus Projetos</h1>
-            <a href="cadastrar.php" class="btn-primario">+ Novo Projeto</a>
+            <h1 class="titulo-secao" style="margin: 0;">Projeto <!--nome do projeto--></h1>
+            
         </div>
-    <?php if ($cadastroOk): ?>
-        <div class='alert-sucesso'>
-            <p style="margin:0;">Projeto cadastrado com sucesso!</p>
-        </div>
-    <?php endif; ?>
-    <?php if (empty($projetos)): ?>
+   
+
+    <?php if (empty($id)): ?>
         <div class="card" style="text-align:center;padding: 40px 20px; color:#6b7280;">
             <p style="font-size:16px; margin:0 0 16px;">Nenhum projeto encontrado</p>
-            <a href="cadastrar.php" class="btn-primario">+ Cadastrar o primeiro Projeto</a>
+            <?php  $tec?>
         </div>
     <?php else: ?>
         <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr));gap:20px;">
@@ -89,13 +36,11 @@ $pagina_atual = '';
          <p style="margin: 0 0 12px; font-size: 13px; color:#6b7280;">
           <?php echo htmlspecialchars($projeto['ano']); ?>
         </p><form class="form-container" action="detalhe.php" method="post">
-             <input type="hidden" name="id" value="<?php echo $projeto['id']; ?>">
                 <button type="submit" >Detalhes</button>
 
         </form>
 
          <?php if (!empty($projeto['link_github'])): ?>
-            <?php [$id] = [$projeto['id']]; ?>
              <a 
                  href="<?php echo htmlspecialchars($projeto['link_github']); ?>"
                  target="_blank" 
@@ -115,7 +60,7 @@ $pagina_atual = '';
     <?php endif; ?>
 
     </div>
-
+<!--Fazer um botao de saida para voltar a projetos -->
  <?php require_once __DIR__ .'/../includes/rodape.php';?>
 
 </body>
