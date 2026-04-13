@@ -28,7 +28,9 @@ if(!$projeto){
     exit;
 }
 $erro='';
-
+if(!$projeto){
+    
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $nome = trim($_POST['nome'] ?? '');
     $descricao = trim($_POST['descricao'] ?? '');
@@ -54,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $projeto['ano'] = $ano;
     }
 
-    $titulo_pagina = "eeditar Projeto - Portifolio";
+    $titulo_pagina = "Editar Projeto - Portifolio";
     $caminho_raiz = '../';
     $pagina_atual = '';
     ?>
@@ -79,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="campo">
                 <label class="label-campo">Descrição</label>
                 <textarea name="descricao" class="input-text" rows="4">
-                    <?php echo htmlspecialchars($projeto['descricao']); ?>></textarea>
+                    <?php echo htmlspecialchars($projeto['descricao']); ?></textarea>
             </div>
             <div class="campo">
                 <label clas="label-campo"> Tecnologias </label>

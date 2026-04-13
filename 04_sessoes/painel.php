@@ -28,14 +28,15 @@ $pagina_atual = '';
 </p>
 </div>
 <div class="card"><h3>📊Painel de controle</h3>
-<p> Este conteúdo só é visivel para usuario autenticados</p>
-<p>Nas próximas aulas este painel terá funcionalidades reais (CRUD).</p>
+    <p>Este conteudo só é visivel para usuario autenticados
+</p>
+<a href="../05_crud/index.php" class="btn-primario">Gerenciar Projetos</a>
 </div>
-   <p style="margin-top:24px; text-align:center;">
-    <a href="logout.php"
-    style="background: #cf1c21; color: white; padding:10px 24px; border-radius: 6px; text-decoration: none; font-weight:bold;">🚪 Sair
-</a>
-   </p>
+<p style="margin-top:24px; text-align:center;">
+    <a href="logout.php"style="background:#cf1c21; color: white;padding:10px 24px; border-radius:6px; text-decoration:none; font-weight: bold;">
+        Sair
+    </a>
+</p>
 </div>
 <?php require_once __DIR__ . '/../includes/rodape.php';?>
 </body>
