@@ -8,11 +8,12 @@
  * 
 */ 
  if(!isset($pagina_atual)) $pagina_atual = "";
- if(!isset($pagina_atual)) $pagina_atual = "../";
+ if(!isset($pagina_atual)) $pagina_atual = "./";
  
- function menu_class($item,$atual){
-  return ($item == $atual) ? 'class="ativo"': '';
+ function menu_class(String $item, String $atual): String{
+  return ($item === $atual) ? 'class="ativo"': '';
  }
+ $logado =isset($_SESSION['usuario']);
 ?>
 <nav>
   <a href="<?php echo $caminho_raiz; ?>01_php-intro/index.php"
@@ -36,6 +37,20 @@
 <?php echo menu_class("Catalogo", $pagina_atual);?>>
 📥Catalogo
 </a>
+<?php if ($logado): ?>
+<a href="<?php echo $caminho_raiz; ?>04_sessoes/login.php"
+<?php echo menu_class("Login", $pagina_atual);?>>
+🔐Login
+</a>
+<a href="<?php echo $caminho_raiz; ?>painel.php"
+<?php echo menu_class("painel",$pagina_atual); ?>> </a>
+<a href="<?php echo $caminho_raiz; ?>logout.php">
+Sair</a>
+<a href="<?php echo $caminho_raiz; ?>05_crud/index.php"
+<?php echo menu_class("CRUD", $pagina_atual);?>>
+CRUD
+</a>
+<?php endif; ?>
 
 </nav>
 

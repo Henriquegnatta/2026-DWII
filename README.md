@@ -25,7 +25,7 @@ Repositório da disciplina **Desenvolvimento Web II** — 2026
 
 ## 🌐 Páginas Publicadas
 
-- 📄 [Página de Apresentação](00_apresentacao/index.html)
+- 📄 [Página de Apresentação](01_projetoPHP-01/00_apresentacao/index.html)
 
 ---
 

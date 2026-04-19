@@ -19,7 +19,8 @@
 //Valor padrão ativa caso a pagina esqueça de declarar $titulo_pagina.
 
 if (!isset($titulo_pagina)) $titulo_pagina = "Portifolio - DWII";
-if(!isset($caminho_raiz)) $caminho_raiz = "../";
+if(!isset($caminho_raiz)) $caminho_raiz = "./";
+if(!isset($caminho_raiz)) $caminho_raiz = "";
 ?>
 <?php include 'nav.php';?>
     <meta charset="UTF-8">

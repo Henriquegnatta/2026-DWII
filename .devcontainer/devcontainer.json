@@ -8,7 +8,8 @@
     "vscode": {
       "extensions": [
         "bmewburn.vscode-intelephense-client",
-        "cweijan.vscode-mysql-client2"
+        "cweijan.vscode-mysql-client2",
+        "jakobhoeg.vscode-pokemon"
       ]
     }
   }
